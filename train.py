@@ -4,6 +4,7 @@ import torch.optim as optim
 from model import EmotionCNN
 from utils import get_dataloaders
 
+
 train_loader, test_loader, class_names = get_dataloaders()
 
 model = EmotionCNN(num_classes=len(class_names))

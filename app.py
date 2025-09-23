@@ -1,7 +1,7 @@
 import streamlit as st
-from scripts.predict_image import predict_image
-from scripts.predict_webcam import run_webcam
-from scripts.utils import get_dataloaders
+from predict_image import predict_image
+from predict_webcam import run_webcam
+from utils import get_dataloaders
 
 _, _, class_names = get_dataloaders()
 
