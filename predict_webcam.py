@@ -14,9 +14,9 @@ def run_webcam(class_names):
     cap=cv2.VideoCapture(0)
     while True:
         ret, frame=cap.read()
-        gray=cv2.cvtColor(frame,cv2.Color_BGR2GRAY)
+        gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
+        tensor = transform(Image.fromarray(face)).unsqueeze(0)
         face=cv2.resize(gray,(48,48))
-        tensor=transform(Image.fromarray(face)).unsqueez(0)
         output=model(tensor)
         pred = torch.argmax(output, dim=1).item()
         cv2.putText(frame, class_names[pred], (10, 30), cv2.FONT_HERSHEY_SIMPLEX, 1, (255,0,0), 2)

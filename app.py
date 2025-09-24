@@ -3,7 +3,8 @@ from predict_image import predict_image
 from predict_webcam import run_webcam
 from utils import get_dataloaders
 
-_, _, class_names = get_dataloaders()
+_, _, class_names = get_dataloaders("D:/Coding/Facial_Expression_Recognition")
+
 
 st.title("Facial Expression Recognition")
 
@@ -14,7 +15,7 @@ if mode == "Image Upload":
     if uploaded_file:
         st.image(uploaded_file)
         predict_image(uploaded_file,class_names)
-elif mode=="Webcam Stream":
-st.write("Press 'Start' to begin webcam emotion detection.")
-if st.button("Start"):
-    run_webcam(class_names)
+elif mode == "Webcam Stream":
+    st.write("Press 'Start' to begin webcam emotion detection.")
+    if st.button("Start"):
+        run_webcam(class_names)
