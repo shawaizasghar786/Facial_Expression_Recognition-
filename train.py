@@ -5,7 +5,9 @@ from model import EmotionCNN
 from utils import get_dataloaders
 
 
-train_loader, test_loader, class_names = get_dataloaders()
+train_loader, test_loader, class_names = get_dataloaders("D:/Coding/Facial_Expression_Recognition")
+
+
 
 model = EmotionCNN(num_classes=len(class_names))
 criterion = nn.CrossEntropyLoss()
